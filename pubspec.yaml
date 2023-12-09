@@ -50,6 +50,7 @@ dev_dependencies:
   build_runner: ^2.4.6
   riverpod_generator: ^2.3.6
   go_router_builder: ^2.3.0
+  retrofit_generator: ^8.0.5
   json_serializable: ^6.7.1
   envied_generator: ^0.5.2
 

@@ -21,7 +21,7 @@ class _HomeApi implements HomeApi {
   String? baseUrl;
 
   @override
-  Future<String> getPopularMovies({
+  Future<PopularMoviesResponse> getPopularMovies({
     String language = 'ja',
     required int page,
     String region = 'JP',
@@ -34,23 +34,24 @@ class _HomeApi implements HomeApi {
     };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<String>(_setStreamType<String>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<PopularMoviesResponse>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
-        .compose(
-          _dio.options,
-          '/3/movie/popular',
-          queryParameters: queryParameters,
-          data: _data,
-        )
-        .copyWith(
-            baseUrl: _combineBaseUrls(
-          _dio.options.baseUrl,
-          baseUrl,
-        ))));
-    final value = _result.data!;
+            .compose(
+              _dio.options,
+              '/3/movie/popular',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = PopularMoviesResponse.fromJson(_result.data!);
     return value;
   }
 

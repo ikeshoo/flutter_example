@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_example/common_data/app_dio.dart';
+import 'package:flutter_example/feature/home/data/response/popular_movies_response.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -10,7 +11,7 @@ abstract class HomeApi {
   factory HomeApi(Dio dio) = _HomeApi;
 
   @GET('/3/movie/popular')
-  Future<String> getPopularMovies({
+  Future<PopularMoviesResponse> getPopularMovies({
     @Query('language') String language = 'ja',
     @Query('page') required int page,
     @Query('region') String region = 'JP',

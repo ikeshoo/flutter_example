@@ -112,11 +112,12 @@ class __$$PopularMoviesResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PopularMoviesResponseImpl implements _PopularMoviesResponse {
+class _$PopularMoviesResponseImpl extends _PopularMoviesResponse {
   const _$PopularMoviesResponseImpl(
       {required this.page,
       @JsonKey(name: 'results') required final List<MovieResponse> movies})
-      : _movies = movies;
+      : _movies = movies,
+        super._();
 
   factory _$PopularMoviesResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$PopularMoviesResponseImplFromJson(json);
@@ -166,11 +167,12 @@ class _$PopularMoviesResponseImpl implements _PopularMoviesResponse {
   }
 }
 
-abstract class _PopularMoviesResponse implements PopularMoviesResponse {
+abstract class _PopularMoviesResponse extends PopularMoviesResponse {
   const factory _PopularMoviesResponse(
       {required final int page,
       @JsonKey(name: 'results')
       required final List<MovieResponse> movies}) = _$PopularMoviesResponseImpl;
+  const _PopularMoviesResponse._() : super._();
 
   factory _PopularMoviesResponse.fromJson(Map<String, dynamic> json) =
       _$PopularMoviesResponseImpl.fromJson;

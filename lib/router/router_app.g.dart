@@ -19,6 +19,13 @@ RouteBase get $rootRoute => StatefulShellRouteData.$route(
             GoRouteData.$route(
               path: '/home',
               factory: $HomeRouteExtension._fromState,
+              routes: [
+                GoRouteData.$route(
+                  path: 'movie-detail',
+                  parentNavigatorKey: MovieDetailRoute.$parentNavigatorKey,
+                  factory: $MovieDetailRouteExtension._fromState,
+                ),
+              ],
             ),
           ],
         ),
@@ -43,6 +50,24 @@ extension $HomeRouteExtension on HomeRoute {
 
   String get location => GoRouteData.$location(
         '/home',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $MovieDetailRouteExtension on MovieDetailRoute {
+  static MovieDetailRoute _fromState(GoRouterState state) =>
+      const MovieDetailRoute();
+
+  String get location => GoRouteData.$location(
+        '/home/movie-detail',
       );
 
   void go(BuildContext context) => context.go(location);

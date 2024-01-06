@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_example/feature/home/presentation/home_page.dart';
+import 'package:flutter_example/feature/home/presentation/movie_detail_page.dart';
 import 'package:flutter_example/feature/search/search_page.dart';
 import 'package:flutter_example/router/navigator_key.dart';
 import 'package:flutter_example/router/root_page.dart';
@@ -13,6 +14,11 @@ part 'router_app.g.dart';
       routes: [
         TypedGoRoute<HomeRoute>(
           path: HomeRoute.path,
+          routes: [
+            TypedGoRoute<MovieDetailRoute>(
+              path: MovieDetailRoute.path,
+            ),
+          ],
         ),
       ],
     ),
@@ -52,6 +58,19 @@ class HomeRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return const HomePage();
+  }
+}
+
+class MovieDetailRoute extends GoRouteData {
+  const MovieDetailRoute();
+
+  static const path = 'movie-detail';
+
+  static final $parentNavigatorKey = rootNavigatorKey;
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const MovieDetailPage();
   }
 }
 

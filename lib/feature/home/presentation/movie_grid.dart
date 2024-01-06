@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_example/feature/home/domain/movie.dart';
+import 'package:flutter_example/router/router_app.dart';
 
 class MovieGrid extends StatelessWidget {
   const MovieGrid({
@@ -33,13 +34,18 @@ class MovieCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      clipBehavior: Clip.antiAlias,
-      elevation: 8.0,
-      child: CachedNetworkImage(
-        imageUrl: imageUrl,
-        fit: BoxFit.cover,
+    return InkWell(
+      child: Card(
+        clipBehavior: Clip.antiAlias,
+        elevation: 8.0,
+        child: CachedNetworkImage(
+          imageUrl: imageUrl,
+          fit: BoxFit.cover,
+        ),
       ),
+      onTap: () {
+        const MovieDetailRoute().go(context);
+      },
     );
   }
 }

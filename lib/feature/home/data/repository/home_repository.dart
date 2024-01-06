@@ -20,12 +20,3 @@ HomeRepository homeRepository(HomeRepositoryRef ref) {
   final homeApi = ref.watch(homeApiProvider);
   return HomeRepository(homeApi);
 }
-
-@riverpod
-Future<PopularMoviesResponse> popularMovies(
-  PopularMoviesRef ref, {
-  required int page,
-}) {
-  final homeRepository = ref.watch(homeRepositoryProvider);
-  return homeRepository.getPopularMovies(page: page);
-}

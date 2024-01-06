@@ -15,8 +15,7 @@ class MovieGrid extends StatelessWidget {
         itemCount: movies.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          mainAxisSpacing: 8.0,
-          crossAxisSpacing: 8.0,
+          childAspectRatio: 0.68,
         ),
         itemBuilder: (context, index) {
           final movie = movies[index];
@@ -34,6 +33,13 @@ class MovieCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CachedNetworkImage(imageUrl: imageUrl);
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      elevation: 8.0,
+      child: CachedNetworkImage(
+        imageUrl: imageUrl,
+        fit: BoxFit.cover,
+      ),
+    );
   }
 }

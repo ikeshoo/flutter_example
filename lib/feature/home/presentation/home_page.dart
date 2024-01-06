@@ -13,7 +13,10 @@ class HomePage extends ConsumerWidget {
         title: const Text('Home Page'),
       ),
       body: popularMovies.when(
-        data: (data) => MovieGrid(movies: data.movies),
+        data: (data) => Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 4.0),
+          child: MovieGrid(movies: data.movies),
+        ),
         error: (error, stackTrace) => Text(error.toString()),
         loading: () => const CircularProgressIndicator(),
       ),

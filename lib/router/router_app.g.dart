@@ -63,21 +63,24 @@ extension $HomeRouteExtension on HomeRoute {
 }
 
 extension $MovieDetailRouteExtension on MovieDetailRoute {
-  static MovieDetailRoute _fromState(GoRouterState state) =>
-      const MovieDetailRoute();
+  static MovieDetailRoute _fromState(GoRouterState state) => MovieDetailRoute(
+        $extra: state.extra as Movie?,
+      );
 
   String get location => GoRouteData.$location(
         '/home/movie-detail',
       );
 
-  void go(BuildContext context) => context.go(location);
+  void go(BuildContext context) => context.go(location, extra: $extra);
 
-  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+  Future<T?> push<T>(BuildContext context) =>
+      context.push<T>(location, extra: $extra);
 
   void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
+      context.pushReplacement(location, extra: $extra);
 
-  void replace(BuildContext context) => context.replace(location);
+  void replace(BuildContext context) =>
+      context.replace(location, extra: $extra);
 }
 
 extension $SearchRouteExtension on SearchRoute {

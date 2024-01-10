@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_example/feature/home/domain/movie.dart';
 import 'package:flutter_example/feature/home/presentation/home_page.dart';
 import 'package:flutter_example/feature/home/presentation/movie_detail_page.dart';
 import 'package:flutter_example/feature/search/search_page.dart';
@@ -62,15 +63,19 @@ class HomeRoute extends GoRouteData {
 }
 
 class MovieDetailRoute extends GoRouteData {
-  const MovieDetailRoute();
+  const MovieDetailRoute({
+    this.$extra,
+  });
 
   static const path = 'movie-detail';
 
   static final $parentNavigatorKey = rootNavigatorKey;
 
+  final Movie? $extra;
+
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return const MovieDetailPage();
+    return MovieDetailPage(movie: $extra);
   }
 }
 

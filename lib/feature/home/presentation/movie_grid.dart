@@ -20,7 +20,7 @@ class MovieGrid extends StatelessWidget {
         ),
         itemBuilder: (context, index) {
           final movie = movies[index];
-          return MovieCard(imageUrl: movie.posterPath);
+          return MovieCard(movie: movie);
         });
   }
 }
@@ -28,9 +28,10 @@ class MovieGrid extends StatelessWidget {
 class MovieCard extends StatelessWidget {
   const MovieCard({
     Key? key,
-    required this.imageUrl,
+    required this.movie,
   }) : super(key: key);
-  final String imageUrl;
+
+  final Movie movie;
 
   @override
   Widget build(BuildContext context) {
@@ -39,12 +40,12 @@ class MovieCard extends StatelessWidget {
         clipBehavior: Clip.antiAlias,
         elevation: 8.0,
         child: CachedNetworkImage(
-          imageUrl: imageUrl,
+          imageUrl: movie.posterPath,
           fit: BoxFit.cover,
         ),
       ),
       onTap: () {
-        const MovieDetailRoute().go(context);
+        MovieDetailRoute($extra: movie).go(context);
       },
     );
   }

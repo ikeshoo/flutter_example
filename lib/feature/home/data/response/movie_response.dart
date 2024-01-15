@@ -10,8 +10,10 @@ class MovieResponse with _$MovieResponse {
   const factory MovieResponse({
     required int id,
     required String title,
+    required String overview,
     @JsonKey(name: 'poster_path') required String posterPath,
     @JsonKey(name: 'release_date') required String releaseDate,
+    @JsonKey(name: 'backdrop_path') required String backdropPath,
   }) = _MovieResponse;
 
   factory MovieResponse.fromJson(Map<String, dynamic> json) =>
@@ -21,8 +23,12 @@ class MovieResponse with _$MovieResponse {
     return Movie(
       id: id,
       title: title,
+      overview: overview.isEmpty
+          ? 'Sorry, Japanese overview is not available...'
+          : overview,
       posterPath: Movie.posterUrl + posterPath,
       releaseDate: DateTime.parse(releaseDate),
+      backdropPath: Movie.posterUrl + backdropPath,
     );
   }
 }

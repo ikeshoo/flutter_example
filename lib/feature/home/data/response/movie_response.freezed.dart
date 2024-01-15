@@ -22,10 +22,13 @@ MovieResponse _$MovieResponseFromJson(Map<String, dynamic> json) {
 mixin _$MovieResponse {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
+  String get overview => throw _privateConstructorUsedError;
   @JsonKey(name: 'poster_path')
   String get posterPath => throw _privateConstructorUsedError;
   @JsonKey(name: 'release_date')
   String get releaseDate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'backdrop_path')
+  String get backdropPath => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,8 +45,10 @@ abstract class $MovieResponseCopyWith<$Res> {
   $Res call(
       {int id,
       String title,
+      String overview,
       @JsonKey(name: 'poster_path') String posterPath,
-      @JsonKey(name: 'release_date') String releaseDate});
+      @JsonKey(name: 'release_date') String releaseDate,
+      @JsonKey(name: 'backdrop_path') String backdropPath});
 }
 
 /// @nodoc
@@ -61,8 +66,10 @@ class _$MovieResponseCopyWithImpl<$Res, $Val extends MovieResponse>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? overview = null,
     Object? posterPath = null,
     Object? releaseDate = null,
+    Object? backdropPath = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -73,6 +80,10 @@ class _$MovieResponseCopyWithImpl<$Res, $Val extends MovieResponse>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      overview: null == overview
+          ? _value.overview
+          : overview // ignore: cast_nullable_to_non_nullable
+              as String,
       posterPath: null == posterPath
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
@@ -80,6 +91,10 @@ class _$MovieResponseCopyWithImpl<$Res, $Val extends MovieResponse>
       releaseDate: null == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      backdropPath: null == backdropPath
+          ? _value.backdropPath
+          : backdropPath // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -96,8 +111,10 @@ abstract class _$$MovieResponseImplCopyWith<$Res>
   $Res call(
       {int id,
       String title,
+      String overview,
       @JsonKey(name: 'poster_path') String posterPath,
-      @JsonKey(name: 'release_date') String releaseDate});
+      @JsonKey(name: 'release_date') String releaseDate,
+      @JsonKey(name: 'backdrop_path') String backdropPath});
 }
 
 /// @nodoc
@@ -113,8 +130,10 @@ class __$$MovieResponseImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? overview = null,
     Object? posterPath = null,
     Object? releaseDate = null,
+    Object? backdropPath = null,
   }) {
     return _then(_$MovieResponseImpl(
       id: null == id
@@ -125,6 +144,10 @@ class __$$MovieResponseImplCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      overview: null == overview
+          ? _value.overview
+          : overview // ignore: cast_nullable_to_non_nullable
+              as String,
       posterPath: null == posterPath
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
@@ -132,6 +155,10 @@ class __$$MovieResponseImplCopyWithImpl<$Res>
       releaseDate: null == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
+              as String,
+      backdropPath: null == backdropPath
+          ? _value.backdropPath
+          : backdropPath // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -143,8 +170,10 @@ class _$MovieResponseImpl extends _MovieResponse {
   const _$MovieResponseImpl(
       {required this.id,
       required this.title,
+      required this.overview,
       @JsonKey(name: 'poster_path') required this.posterPath,
-      @JsonKey(name: 'release_date') required this.releaseDate})
+      @JsonKey(name: 'release_date') required this.releaseDate,
+      @JsonKey(name: 'backdrop_path') required this.backdropPath})
       : super._();
 
   factory _$MovieResponseImpl.fromJson(Map<String, dynamic> json) =>
@@ -155,15 +184,20 @@ class _$MovieResponseImpl extends _MovieResponse {
   @override
   final String title;
   @override
+  final String overview;
+  @override
   @JsonKey(name: 'poster_path')
   final String posterPath;
   @override
   @JsonKey(name: 'release_date')
   final String releaseDate;
+  @override
+  @JsonKey(name: 'backdrop_path')
+  final String backdropPath;
 
   @override
   String toString() {
-    return 'MovieResponse(id: $id, title: $title, posterPath: $posterPath, releaseDate: $releaseDate)';
+    return 'MovieResponse(id: $id, title: $title, overview: $overview, posterPath: $posterPath, releaseDate: $releaseDate, backdropPath: $backdropPath)';
   }
 
   @override
@@ -173,16 +207,20 @@ class _$MovieResponseImpl extends _MovieResponse {
             other is _$MovieResponseImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
+            (identical(other.overview, overview) ||
+                other.overview == overview) &&
             (identical(other.posterPath, posterPath) ||
                 other.posterPath == posterPath) &&
             (identical(other.releaseDate, releaseDate) ||
-                other.releaseDate == releaseDate));
+                other.releaseDate == releaseDate) &&
+            (identical(other.backdropPath, backdropPath) ||
+                other.backdropPath == backdropPath));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, title, posterPath, releaseDate);
+  int get hashCode => Object.hash(
+      runtimeType, id, title, overview, posterPath, releaseDate, backdropPath);
 
   @JsonKey(ignore: true)
   @override
@@ -202,8 +240,10 @@ abstract class _MovieResponse extends MovieResponse {
   const factory _MovieResponse(
           {required final int id,
           required final String title,
+          required final String overview,
           @JsonKey(name: 'poster_path') required final String posterPath,
-          @JsonKey(name: 'release_date') required final String releaseDate}) =
+          @JsonKey(name: 'release_date') required final String releaseDate,
+          @JsonKey(name: 'backdrop_path') required final String backdropPath}) =
       _$MovieResponseImpl;
   const _MovieResponse._() : super._();
 
@@ -215,11 +255,16 @@ abstract class _MovieResponse extends MovieResponse {
   @override
   String get title;
   @override
+  String get overview;
+  @override
   @JsonKey(name: 'poster_path')
   String get posterPath;
   @override
   @JsonKey(name: 'release_date')
   String get releaseDate;
+  @override
+  @JsonKey(name: 'backdrop_path')
+  String get backdropPath;
   @override
   @JsonKey(ignore: true)
   _$$MovieResponseImplCopyWith<_$MovieResponseImpl> get copyWith =>

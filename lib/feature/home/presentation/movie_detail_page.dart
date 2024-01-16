@@ -73,14 +73,16 @@ class MovieDetailPage extends ConsumerWidget {
               ),
               child: Container(
                 alignment: Alignment.bottomLeft,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
                       Colors.transparent,
-                      Colors.black,
+                      Colors.white.withOpacity(0.45),
+                      Colors.white.withOpacity(0.9),
                     ],
-                    stops: [
-                      0.25,
+                    stops: const [
+                      0.5,
+                      0.75,
                       1.0,
                     ],
                     begin: Alignment.topCenter,
@@ -92,8 +94,8 @@ class MovieDetailPage extends ConsumerWidget {
                   child: Text(
                     movie.title,
                     style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 32,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

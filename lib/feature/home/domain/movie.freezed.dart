@@ -22,6 +22,7 @@ mixin _$Movie {
   String get posterPath => throw _privateConstructorUsedError;
   DateTime get releaseDate => throw _privateConstructorUsedError;
   String get backdropPath => throw _privateConstructorUsedError;
+  List<MovieGenre> get genres => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MovieCopyWith<Movie> get copyWith => throw _privateConstructorUsedError;
@@ -38,7 +39,8 @@ abstract class $MovieCopyWith<$Res> {
       String overview,
       String posterPath,
       DateTime releaseDate,
-      String backdropPath});
+      String backdropPath,
+      List<MovieGenre> genres});
 }
 
 /// @nodoc
@@ -60,6 +62,7 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
     Object? posterPath = null,
     Object? releaseDate = null,
     Object? backdropPath = null,
+    Object? genres = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -86,6 +89,10 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
               as String,
+      genres: null == genres
+          ? _value.genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<MovieGenre>,
     ) as $Val);
   }
 }
@@ -103,7 +110,8 @@ abstract class _$$MovieImplCopyWith<$Res> implements $MovieCopyWith<$Res> {
       String overview,
       String posterPath,
       DateTime releaseDate,
-      String backdropPath});
+      String backdropPath,
+      List<MovieGenre> genres});
 }
 
 /// @nodoc
@@ -123,6 +131,7 @@ class __$$MovieImplCopyWithImpl<$Res>
     Object? posterPath = null,
     Object? releaseDate = null,
     Object? backdropPath = null,
+    Object? genres = null,
   }) {
     return _then(_$MovieImpl(
       id: null == id
@@ -149,6 +158,10 @@ class __$$MovieImplCopyWithImpl<$Res>
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
               as String,
+      genres: null == genres
+          ? _value._genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<MovieGenre>,
     ));
   }
 }
@@ -162,7 +175,9 @@ class _$MovieImpl implements _Movie {
       required this.overview,
       required this.posterPath,
       required this.releaseDate,
-      required this.backdropPath});
+      required this.backdropPath,
+      required final List<MovieGenre> genres})
+      : _genres = genres;
 
   @override
   final int id;
@@ -176,10 +191,17 @@ class _$MovieImpl implements _Movie {
   final DateTime releaseDate;
   @override
   final String backdropPath;
+  final List<MovieGenre> _genres;
+  @override
+  List<MovieGenre> get genres {
+    if (_genres is EqualUnmodifiableListView) return _genres;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_genres);
+  }
 
   @override
   String toString() {
-    return 'Movie(id: $id, title: $title, overview: $overview, posterPath: $posterPath, releaseDate: $releaseDate, backdropPath: $backdropPath)';
+    return 'Movie(id: $id, title: $title, overview: $overview, posterPath: $posterPath, releaseDate: $releaseDate, backdropPath: $backdropPath, genres: $genres)';
   }
 
   @override
@@ -196,12 +218,13 @@ class _$MovieImpl implements _Movie {
             (identical(other.releaseDate, releaseDate) ||
                 other.releaseDate == releaseDate) &&
             (identical(other.backdropPath, backdropPath) ||
-                other.backdropPath == backdropPath));
+                other.backdropPath == backdropPath) &&
+            const DeepCollectionEquality().equals(other._genres, _genres));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, title, overview, posterPath, releaseDate, backdropPath);
+  int get hashCode => Object.hash(runtimeType, id, title, overview, posterPath,
+      releaseDate, backdropPath, const DeepCollectionEquality().hash(_genres));
 
   @JsonKey(ignore: true)
   @override
@@ -217,7 +240,8 @@ abstract class _Movie implements Movie {
       required final String overview,
       required final String posterPath,
       required final DateTime releaseDate,
-      required final String backdropPath}) = _$MovieImpl;
+      required final String backdropPath,
+      required final List<MovieGenre> genres}) = _$MovieImpl;
 
   @override
   int get id;
@@ -231,6 +255,8 @@ abstract class _Movie implements Movie {
   DateTime get releaseDate;
   @override
   String get backdropPath;
+  @override
+  List<MovieGenre> get genres;
   @override
   @JsonKey(ignore: true)
   _$$MovieImplCopyWith<_$MovieImpl> get copyWith =>

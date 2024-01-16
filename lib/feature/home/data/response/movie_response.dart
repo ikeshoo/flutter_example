@@ -14,6 +14,7 @@ class MovieResponse with _$MovieResponse {
     @JsonKey(name: 'poster_path') required String posterPath,
     @JsonKey(name: 'release_date') required String releaseDate,
     @JsonKey(name: 'backdrop_path') required String backdropPath,
+    @JsonKey(name: 'genre_ids') required List<int> genreIds,
   }) = _MovieResponse;
 
   factory MovieResponse.fromJson(Map<String, dynamic> json) =>
@@ -29,6 +30,7 @@ class MovieResponse with _$MovieResponse {
       posterPath: Movie.posterUrl + posterPath,
       releaseDate: DateTime.parse(releaseDate),
       backdropPath: Movie.posterUrl + backdropPath,
+      genres: genreIds.map((id) => MovieGenre.fromId(id)).toList(),
     );
   }
 }

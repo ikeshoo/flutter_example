@@ -24,8 +24,15 @@ class MovieDetailPage extends ConsumerWidget {
       return ListView(
         children: [
           _posterImage(movie),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 8.0,
+              vertical: 4.0,
+            ),
+            child: _genreChips(movie.genres),
+          ),
           const Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
               'ストーリー',
               style: TextStyle(fontSize: 20),
@@ -115,6 +122,23 @@ class MovieDetailPage extends ConsumerWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _genreChips(List<MovieGenre> genres) {
+    return Wrap(
+      spacing: 8.0,
+      children: genres
+          .map(
+            (genre) => Chip(
+                label: Text(genre.name),
+                backgroundColor: Colors.blueGrey.withOpacity(0.12),
+                padding: const EdgeInsets.all(4.0),
+                side: const BorderSide(
+                  color: Colors.transparent,
+                )),
+          )
+          .toList(),
     );
   }
 

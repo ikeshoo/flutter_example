@@ -14,6 +14,8 @@ _$MovieResponseImpl _$$MovieResponseImplFromJson(Map<String, dynamic> json) =>
       posterPath: json['poster_path'] as String,
       releaseDate: json['release_date'] as String,
       backdropPath: json['backdrop_path'] as String,
+      genreIds:
+          (json['genre_ids'] as List<dynamic>).map((e) => e as int).toList(),
     );
 
 Map<String, dynamic> _$$MovieResponseImplToJson(_$MovieResponseImpl instance) =>
@@ -24,4 +26,5 @@ Map<String, dynamic> _$$MovieResponseImplToJson(_$MovieResponseImpl instance) =>
       'poster_path': instance.posterPath,
       'release_date': instance.releaseDate,
       'backdrop_path': instance.backdropPath,
+      'genre_ids': instance.genreIds,
     };

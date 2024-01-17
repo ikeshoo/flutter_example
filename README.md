@@ -1,16 +1,24 @@
-# flutter_example
+## App Overview
+An application which allows you to look up popular movies and your favorite movies.
+The emphasis is on learning Flutter. 
 
-A new Flutter project.
+(still in the making...)
 
-## Getting Started
+## Libraries
+- hooks_riverpod
+- riverpod_generator
+- go_router
+- go_router_builder
+- retrofit
+- freezed
+- intl
+- cached_network_image
+- envied
 
-This project is a starting point for a Flutter application.
+## Architecture
+While based on the [Android app architecture](https://developer.android.com/topic/architecture), it removes redundant descriptions (e.g., ViewModel) by using Riverpod.
 
-A few resources to get you started if this is your first Flutter project:
+Do not have strict rules, but pay attention to unidirectional data flow
+ and immutalbe programming.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

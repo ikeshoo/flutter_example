@@ -4,11 +4,11 @@ import 'package:flutter_example/feature/movie/data/response/popular_movies_respo
 import 'package:retrofit/retrofit.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'home_api.g.dart';
+part 'movie_api.g.dart';
 
 @RestApi(baseUrl: 'https://api.themoviedb.org')
-abstract class HomeApi {
-  factory HomeApi(Dio dio) = _HomeApi;
+abstract class MovieApi {
+  factory MovieApi(Dio dio) = _MovieApi;
 
   @GET('/3/movie/popular')
   Future<PopularMoviesResponse> getPopularMovies({
@@ -19,7 +19,7 @@ abstract class HomeApi {
 }
 
 @Riverpod(keepAlive: true)
-HomeApi homeApi(HomeApiRef ref) {
+MovieApi movieApi(MovieApiRef ref) {
   final dio = ref.watch(appDioProvider);
-  return HomeApi(dio);
+  return MovieApi(dio);
 }

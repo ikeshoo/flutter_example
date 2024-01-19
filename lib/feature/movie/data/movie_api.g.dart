@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'home_api.dart';
+part of 'movie_api.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'home_api.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _HomeApi implements HomeApi {
-  _HomeApi(
+class _MovieApi implements MovieApi {
+  _MovieApi(
     this._dio, {
     this.baseUrl,
   }) {
@@ -90,19 +90,19 @@ class _HomeApi implements HomeApi {
 // RiverpodGenerator
 // **************************************************************************
 
-String _$homeApiHash() => r'3aeb4b90ce6f73273337a2ff523bc9a1798d7b4e';
+String _$movieApiHash() => r'de229e2a06c758626bbfe5ddb4f871e0bca3f0b5';
 
-/// See also [homeApi].
-@ProviderFor(homeApi)
-final homeApiProvider = Provider<HomeApi>.internal(
-  homeApi,
-  name: r'homeApiProvider',
+/// See also [movieApi].
+@ProviderFor(movieApi)
+final movieApiProvider = Provider<MovieApi>.internal(
+  movieApi,
+  name: r'movieApiProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$homeApiHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$movieApiHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef HomeApiRef = ProviderRef<HomeApi>;
+typedef MovieApiRef = ProviderRef<MovieApi>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

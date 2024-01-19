@@ -1,4 +1,4 @@
-import 'package:flutter_example/feature/home/domain/movie.dart';
+import 'package:flutter_example/feature/movie/domain/movie.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'popular_movies.freezed.dart';

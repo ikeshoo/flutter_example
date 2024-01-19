@@ -1,5 +1,5 @@
-import 'package:flutter_example/feature/home/data/home_api.dart';
-import 'package:flutter_example/feature/home/data/response/popular_movies_response.dart';
+import 'package:flutter_example/feature/movie/data/home_api.dart';
+import 'package:flutter_example/feature/movie/data/response/popular_movies_response.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'home_repository.g.dart';

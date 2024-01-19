@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_example/common_data/app_dio.dart';
-import 'package:flutter_example/feature/home/data/response/popular_movies_response.dart';
+import 'package:flutter_example/feature/movie/data/response/popular_movies_response.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

@@ -1,5 +1,5 @@
-import 'package:flutter_example/feature/home/data/repository/home_repository.dart';
-import 'package:flutter_example/feature/home/domain/popular_movies.dart';
+import 'package:flutter_example/feature/movie/data/repository/home_repository.dart';
+import 'package:flutter_example/feature/movie/domain/popular_movies.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'popular_movie_controller.g.dart';

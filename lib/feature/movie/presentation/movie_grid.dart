@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_example/feature/home/domain/movie.dart';
+import 'package:flutter_example/feature/movie/domain/movie.dart';
 import 'package:flutter_example/router/router_app.dart';
 
 class MovieGrid extends StatelessWidget {

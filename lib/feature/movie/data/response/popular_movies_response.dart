@@ -1,5 +1,5 @@
-import 'package:flutter_example/feature/home/data/response/movie_response.dart';
-import 'package:flutter_example/feature/home/domain/popular_movies.dart';
+import 'package:flutter_example/feature/movie/data/response/movie_response.dart';
+import 'package:flutter_example/feature/movie/domain/popular_movies.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'popular_movies_response.freezed.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_example/feature/home/domain/movie.dart';
-import 'package:flutter_example/feature/home/presentation/home_page.dart';
-import 'package:flutter_example/feature/home/presentation/movie_detail_page.dart';
-import 'package:flutter_example/feature/home/presentation/search_page.dart';
+import 'package:flutter_example/feature/movie/domain/movie.dart';
+import 'package:flutter_example/feature/movie/presentation/home_page.dart';
+import 'package:flutter_example/feature/movie/presentation/movie_detail_page.dart';
+import 'package:flutter_example/feature/movie/presentation/search_page.dart';
 import 'package:flutter_example/router/navigator_key.dart';
 import 'package:flutter_example/router/root_page.dart';
 import 'package:go_router/go_router.dart';

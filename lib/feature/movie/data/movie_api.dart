@@ -16,6 +16,27 @@ abstract class MovieApi {
     @Query('page') required int page,
     @Query('region') String region = 'JP',
   });
+
+  @GET('/3/movie/now_playing')
+  Future<MoviesResponse> getNowPlayingMovies({
+    @Query('language') String language = 'ja',
+    @Query('page') required int page,
+    @Query('region') String region = 'JP',
+  });
+
+  @GET('/3/movie/upcoming')
+  Future<MoviesResponse> getUpcomingMovies({
+    @Query('language') String language = 'ja',
+    @Query('page') required int page,
+    @Query('region') String region = 'JP',
+  });
+
+  @GET('/3/movie/top_rated')
+  Future<MoviesResponse> getTopRatedMovies({
+    @Query('language') String language = 'ja',
+    @Query('page') required int page,
+    @Query('region') String region = 'JP',
+  });
 }
 
 @Riverpod(keepAlive: true)

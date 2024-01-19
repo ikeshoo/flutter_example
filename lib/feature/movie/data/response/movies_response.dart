@@ -2,19 +2,19 @@ import 'package:flutter_example/feature/movie/data/response/movie_response.dart'
 import 'package:flutter_example/feature/movie/domain/popular_movies.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'popular_movies_response.freezed.dart';
-part 'popular_movies_response.g.dart';
+part 'movies_response.freezed.dart';
+part 'movies_response.g.dart';
 
 @freezed
-class PopularMoviesResponse with _$PopularMoviesResponse {
-  const PopularMoviesResponse._();
-  const factory PopularMoviesResponse({
+class MoviesResponse with _$MoviesResponse {
+  const MoviesResponse._();
+  const factory MoviesResponse({
     required int page,
     @JsonKey(name: 'results') required List<MovieResponse> movies,
-  }) = _PopularMoviesResponse;
+  }) = _MoviesResponse;
 
-  factory PopularMoviesResponse.fromJson(Map<String, dynamic> json) =>
-      _$PopularMoviesResponseFromJson(json);
+  factory MoviesResponse.fromJson(Map<String, dynamic> json) =>
+      _$MoviesResponseFromJson(json);
 
   PopularMovies toEntity() {
     return PopularMovies(

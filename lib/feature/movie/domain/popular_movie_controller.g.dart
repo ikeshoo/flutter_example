@@ -7,7 +7,7 @@ part of 'popular_movie_controller.dart';
 // **************************************************************************
 
 String _$popularMovieControllerHash() =>
-    r'21107273f3a5c4a3a33319dff9ee3dc1a21ece85';
+    r'2c5f12e5f4ca98d0b8f17fef1f664e8f89c41b47';
 
 /// See also [PopularMovieController].
 @ProviderFor(PopularMovieController)

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_example/feature/movie/presentation/movie_type_list.dart';
+import 'package:flutter_example/feature/movie/presentation/search_bar.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SearchPage extends ConsumerWidget {
@@ -10,10 +11,17 @@ class SearchPage extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('Search'),
       ),
-      body: ListView(
-        children: [
-          const MovieTypeList(),
-        ],
+      body: const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            MovieSerachBar(),
+            Padding(
+              padding: EdgeInsets.only(top: 8.0),
+              child: MovieTypeList(),
+            ),
+          ],
+        ),
       ),
     );
   }

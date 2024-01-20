@@ -10,7 +10,7 @@ class HomePage extends ConsumerWidget {
     final popularMovies = ref.watch(popularMovieControllerProvider);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
+        title: const Text('Home'),
       ),
       body: popularMovies.when(
         data: (data) => Padding(

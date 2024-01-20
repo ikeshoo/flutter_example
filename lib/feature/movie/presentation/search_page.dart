@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_example/feature/movie/presentation/movie_type_list.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SearchPage extends ConsumerWidget {
@@ -7,10 +8,12 @@ class SearchPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Search Page'),
+        title: const Text('Search'),
       ),
-      body: const Center(
-        child: Text('Search Page'),
+      body: ListView(
+        children: [
+          const MovieTypeList(),
+        ],
       ),
     );
   }

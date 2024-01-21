@@ -35,6 +35,13 @@ RouteBase get $rootRoute => StatefulShellRouteData.$route(
             GoRouteData.$route(
               path: '/search',
               factory: $SearchRouteExtension._fromState,
+              routes: [
+                GoRouteData.$route(
+                  path: 'movie-list',
+                  parentNavigatorKey: MovieListRoute.$parentNavigatorKey,
+                  factory: $MovieListRouteExtension._fromState,
+                ),
+              ],
             ),
           ],
         ),
@@ -98,4 +105,38 @@ extension $SearchRouteExtension on SearchRoute {
       context.pushReplacement(location);
 
   void replace(BuildContext context) => context.replace(location);
+}
+
+extension $MovieListRouteExtension on MovieListRoute {
+  static MovieListRoute _fromState(GoRouterState state) => MovieListRoute(
+        _$MovieListTypeEnumMap._$fromName(state.uri.queryParameters['type']!),
+      );
+
+  String get location => GoRouteData.$location(
+        '/search/movie-list',
+        queryParams: {
+          'type': _$MovieListTypeEnumMap[type],
+        },
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+const _$MovieListTypeEnumMap = {
+  MovieListType.popular: 'popular',
+  MovieListType.topRated: 'top-rated',
+  MovieListType.upcoming: 'upcoming',
+  MovieListType.nowPlaying: 'now-playing',
+};
+
+extension<T extends Enum> on Map<T, String> {
+  T _$fromName(String value) =>
+      entries.singleWhere((element) => element.value == value).key;
 }

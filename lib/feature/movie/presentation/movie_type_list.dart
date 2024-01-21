@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_example/feature/movie/domain/movie_list_type.dart';
+import 'package:flutter_example/router/router_app.dart';
 
 class MovieTypeList extends StatelessWidget {
   const MovieTypeList({Key? key}) : super(key: key);
@@ -53,7 +54,9 @@ class TypeCard extends StatelessWidget {
               ),
             ),
           ),
-          onTap: () {},
+          onTap: () {
+            MovieListRoute(type).go(context);
+          },
         ),
       ),
     );

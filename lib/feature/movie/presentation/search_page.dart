@@ -11,17 +11,17 @@ class SearchPage extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('Search'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            MovieSerachBar(),
-            Padding(
-              padding: EdgeInsets.only(top: 8.0),
-              child: MovieTypeList(),
-            ),
-          ],
-        ),
+      body: ListView(
+        children: const [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: MovieSerachBar(),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 8.0),
+            child: MovieTypeList(),
+          ),
+        ],
       ),
     );
   }

@@ -28,7 +28,7 @@ mixin _$MovieResponse {
   @JsonKey(name: 'release_date')
   String get releaseDate => throw _privateConstructorUsedError;
   @JsonKey(name: 'backdrop_path')
-  String get backdropPath => throw _privateConstructorUsedError;
+  String? get backdropPath => throw _privateConstructorUsedError;
   @JsonKey(name: 'genre_ids')
   List<int> get genreIds => throw _privateConstructorUsedError;
 
@@ -50,7 +50,7 @@ abstract class $MovieResponseCopyWith<$Res> {
       String overview,
       @JsonKey(name: 'poster_path') String posterPath,
       @JsonKey(name: 'release_date') String releaseDate,
-      @JsonKey(name: 'backdrop_path') String backdropPath,
+      @JsonKey(name: 'backdrop_path') String? backdropPath,
       @JsonKey(name: 'genre_ids') List<int> genreIds});
 }
 
@@ -72,7 +72,7 @@ class _$MovieResponseCopyWithImpl<$Res, $Val extends MovieResponse>
     Object? overview = null,
     Object? posterPath = null,
     Object? releaseDate = null,
-    Object? backdropPath = null,
+    Object? backdropPath = freezed,
     Object? genreIds = null,
   }) {
     return _then(_value.copyWith(
@@ -96,10 +96,10 @@ class _$MovieResponseCopyWithImpl<$Res, $Val extends MovieResponse>
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as String,
-      backdropPath: null == backdropPath
+      backdropPath: freezed == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       genreIds: null == genreIds
           ? _value.genreIds
           : genreIds // ignore: cast_nullable_to_non_nullable
@@ -122,7 +122,7 @@ abstract class _$$MovieResponseImplCopyWith<$Res>
       String overview,
       @JsonKey(name: 'poster_path') String posterPath,
       @JsonKey(name: 'release_date') String releaseDate,
-      @JsonKey(name: 'backdrop_path') String backdropPath,
+      @JsonKey(name: 'backdrop_path') String? backdropPath,
       @JsonKey(name: 'genre_ids') List<int> genreIds});
 }
 
@@ -142,7 +142,7 @@ class __$$MovieResponseImplCopyWithImpl<$Res>
     Object? overview = null,
     Object? posterPath = null,
     Object? releaseDate = null,
-    Object? backdropPath = null,
+    Object? backdropPath = freezed,
     Object? genreIds = null,
   }) {
     return _then(_$MovieResponseImpl(
@@ -166,10 +166,10 @@ class __$$MovieResponseImplCopyWithImpl<$Res>
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
               as String,
-      backdropPath: null == backdropPath
+      backdropPath: freezed == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       genreIds: null == genreIds
           ? _value._genreIds
           : genreIds // ignore: cast_nullable_to_non_nullable
@@ -209,7 +209,7 @@ class _$MovieResponseImpl extends _MovieResponse {
   final String releaseDate;
   @override
   @JsonKey(name: 'backdrop_path')
-  final String backdropPath;
+  final String? backdropPath;
   final List<int> _genreIds;
   @override
   @JsonKey(name: 'genre_ids')
@@ -275,7 +275,7 @@ abstract class _MovieResponse extends MovieResponse {
           required final String overview,
           @JsonKey(name: 'poster_path') required final String posterPath,
           @JsonKey(name: 'release_date') required final String releaseDate,
-          @JsonKey(name: 'backdrop_path') required final String backdropPath,
+          @JsonKey(name: 'backdrop_path') required final String? backdropPath,
           @JsonKey(name: 'genre_ids') required final List<int> genreIds}) =
       _$MovieResponseImpl;
   const _MovieResponse._() : super._();
@@ -297,7 +297,7 @@ abstract class _MovieResponse extends MovieResponse {
   String get releaseDate;
   @override
   @JsonKey(name: 'backdrop_path')
-  String get backdropPath;
+  String? get backdropPath;
   @override
   @JsonKey(name: 'genre_ids')
   List<int> get genreIds;

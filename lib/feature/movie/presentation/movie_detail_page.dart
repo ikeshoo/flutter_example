@@ -70,7 +70,7 @@ class MovieDetailPage extends ConsumerWidget {
         alignment: Alignment.topLeft,
         children: [
           CachedNetworkImage(
-            imageUrl: movie.backdropPath,
+            imageUrl: movie.backdropPath ?? '',
             imageBuilder: (context, imageProvider) => Container(
               decoration: BoxDecoration(
                 image: DecorationImage(

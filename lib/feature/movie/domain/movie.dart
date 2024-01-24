@@ -10,7 +10,7 @@ class Movie with _$Movie {
     required String overview,
     required String posterPath,
     required DateTime releaseDate,
-    required String backdropPath,
+    required String? backdropPath,
     required List<MovieGenre> genres,
   }) = _Movie;
 

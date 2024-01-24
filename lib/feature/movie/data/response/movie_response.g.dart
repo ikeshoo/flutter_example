@@ -13,7 +13,7 @@ _$MovieResponseImpl _$$MovieResponseImplFromJson(Map<String, dynamic> json) =>
       overview: json['overview'] as String,
       posterPath: json['poster_path'] as String,
       releaseDate: json['release_date'] as String,
-      backdropPath: json['backdrop_path'] as String,
+      backdropPath: json['backdrop_path'] as String?,
       genreIds:
           (json['genre_ids'] as List<dynamic>).map((e) => e as int).toList(),
     );

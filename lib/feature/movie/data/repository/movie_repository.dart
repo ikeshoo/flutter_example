@@ -1,5 +1,4 @@
 import 'package:flutter_example/feature/movie/data/movie_api.dart';
-import 'package:flutter_example/feature/movie/data/response/movie_response.dart';
 import 'package:flutter_example/feature/movie/data/response/movies_response.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

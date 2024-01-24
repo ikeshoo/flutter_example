@@ -22,7 +22,7 @@ class MovieListPage extends ConsumerWidget {
           child: MovieGrid(movies: data.movies),
         ),
         error: (error, stackTrace) =>
-            Center(child: Text(stackTrace.toString())),
+            ListView(children: [Center(child: Text(error.toString()))]),
         loading: () => const Center(child: CircularProgressIndicator()),
       ),
     );

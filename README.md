@@ -4,6 +4,10 @@ The emphasis is on learning Flutter.
 
 (still in the making...)
 
+### Demo Movie
+
+https://github.com/ikeshoo/flutter_example/assets/87401291/d483f8b9-c514-4dbe-af3a-5323eeffc5c6
+
 ## Libraries
 - hooks_riverpod
 - riverpod_generator

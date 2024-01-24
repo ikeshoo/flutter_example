@@ -8,5 +8,10 @@ part 'app_dio.g.dart';
 Dio appDio(AppDioRef ref) {
   final dio = Dio();
   dio.options.headers['Authorization'] = 'Bearer ${Env.tmdbAccessToken}';
+  dio.interceptors.add(LogInterceptor(
+    request: true,
+    responseBody: true,
+    requestBody: true,
+  ));
   return dio;
 }
